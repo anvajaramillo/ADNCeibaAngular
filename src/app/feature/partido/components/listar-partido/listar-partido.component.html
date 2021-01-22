@@ -1,0 +1,48 @@
+<div class="mx-4 px-4 mb-4 pb-4">
+  <button type="submit" class="btn btn-primary right" routerLink="/partido/crear" id="linkCrearPartido">Crear</button>
+</div>
+<div class="card espacio">
+  <div class="card-body">
+    <table class="table table-hover">
+      <thead class="table-dark text-center">
+        <tr>
+          <th scope="col">Pais 1</th>
+          <th scope="col">Pais 2</th>
+          <th scope="col">Hora Inicio</th>
+          <th scope="col">Hora Fin</th>
+          <th scope="col">Puntaje País 1</th>
+          <th scope="col">Puntaje País 2</th>
+          <th>Editar</th>
+          <th>Eliminar</th>
+          <th>Resultados</th>
+        </tr>
+      </thead>
+      <tbody class="partidos">
+        <tr *ngFor="let item of listaPartidos | async" class="itemPartido">
+          <td id="itemPartidoPais1{{item.idPartido}}">{{ item.pais1 }}</td>
+          <td id="itemPartidoPais2{{item.idPartido}}">{{ item.pais2 }}</td>
+          <td id="itemPartidoHoraInicio{{item.idPartido}}">{{ item.horaInicio }}</td>
+          <td id="itemPartidoHoraFin{{item.idPartido}}">{{ item.horaFin }}</td>
+          <td id="itemPartidoPuntajePais1{{item.idPartido}}">{{ item.puntajePais1 }}</td>
+          <td id="itemPartidoPuntajePais2{{item.idPartido}}">{{ item.puntajePais2 }}</td>
+          <td>
+            <button type="button" name = "button" class="btn btn-primary" id="linkEditarPartido{{item.idPartido}}" [routerLink] = "['/partido/editar',item.idPartido]" routerLinkActive="active"> 
+              Editar
+            </button>
+          </td>
+          <td>
+            <button type="button" name = "button" class="btn btn-danger" id="linkEliminarPartido{{item.idPartido}}" [routerLink] = "['/partido/borrar',item.idPartido]" routerLinkActive="active">
+              Eliminar
+            </button>
+          </td>
+          <td>
+            <button type="button" name = "button" class="btn btn-danger" id="linkResultadosPartido{{item.idPartido}}" [routerLink] = "['/resultados',item.idPartido]" routerLinkActive="active">
+              Resultados
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<router-outlet></router-outlet>

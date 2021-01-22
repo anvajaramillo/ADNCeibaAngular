@@ -1,0 +1,49 @@
+<div class="mx-4 px-4 mb-4 pb-4">
+  <button type="submit" class="btn btn-primary right" routerLink="/apuesta/crear" id="linkCrearApuesta">Crear</button>
+</div>
+<div class="card espacio">
+  <div class="card-body">
+    <table class="table table-hover">
+      <thead class="table-dark text-center">
+        <tr>
+          <th scope="col">Nombre</th>
+          <th scope="col">Cedula</th>
+          <th scope="col">Dinero Apostado</th>
+          <th scope="col">Puntaje Pais 1</th>
+          <th scope="col">Puntaje País 2</th>
+          <th scope="col">Dinero Ganado</th>
+          <th scope="col">Pais 1</th>
+          <th scope="col">Pais 2</th>
+          <th scope="col">Hora Inicio</th>
+          <th>Editar</th>
+          <th>Eliminar</th>
+        </tr>
+
+      </thead>
+      <tbody class="apuestas">
+        <tr *ngFor="let item of listaApuestas | async" class="itemApuesta">
+          <td id="itemApuestaNombre{{item.id}}">{{ item.nombre }}</td>
+          <td id="itemApuestaCedula{{item.id}}">{{ item.cedula }}</td>
+          <td id="itemApuestaDinero{{item.id}}">{{ item.dinero }}</td>
+          <td id="itemApuestaPuntajePais1{{item.id}}">{{ item.puntajePais1 }}</td>
+          <td id="itemApuestaPuntajePais2{{item.id}}">{{ item.puntajePais2 }}</td>
+          <td id="itemApuestaDineroGanado{{item.id}}">{{ item.dineroGanado }}</td>
+          <td id="itemApuestaPartidoPais1{{item.id}}">{{ item.partido.pais1 }}</td>
+          <td id="itemApuestaPartidoPais2{{item.id}}">{{ item.partido.pais2 }}</td>
+          <td id="itemApuestaPartidoHoraInicio{{item.id}}">{{ item.partido.horaInicio }}</td>
+          <td>
+            <button type="button" name = "button" class="btn btn-primary"  id="linkEditarApuesta{{item.id}}" [routerLink] = "['/apuesta/editar',item.id]" routerLinkActive="active"> 
+              Editar
+            </button>
+          </td>
+          <td>
+            <button type="button" name = "button" class="btn btn-danger" id="linkEliminarApuesta{{item.id}}" [routerLink] = "['/apuesta/borrar',item.id]" routerLinkActive="active">
+              Eliminar
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<router-outlet></router-outlet>

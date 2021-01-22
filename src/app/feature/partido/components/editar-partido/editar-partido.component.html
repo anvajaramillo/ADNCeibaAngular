@@ -1,0 +1,39 @@
+<div class="card espacio">
+  <div class="card-header text-center">
+    Editar Partido
+  </div>
+  <div class="card-footer text-muted ">
+    <button type="submit" class="btn btn-primary right" (click)='update()' id="linkAceptarEditarPartido">Aceptar</button>
+  </div>
+  <div class="card-body">
+    <form>
+      <div class="mb-3">
+        <label for="pais1" class="form-label">País 1</label>
+        <input type="text" class="form-control" id="pais1EditarPartido" [(ngModel)]="partido.pais1" name="pais1">
+      </div>
+      <div class="mb-3">
+        <label for="pais2" class="form-label">País 2</label>
+        <input type="text" class="form-control" id="pais2EditarPartido" [(ngModel)]="partido.pais2" name="pais2">
+      </div>
+      <div class="mb-3">
+        <label for="horaInicio" class="form-label">Hora Inicio</label>
+        <input type="text" placeholder="yyyy-mm-dd hh:mm" class="form-control" id="horaInicioEditarPartido" [(ngModel)]="partido.horaInicio" name="horaInicio">
+      </div>
+      <div class="mb-3">
+        <label for="horaFin" class="form-label">Hora Fin</label>
+        <input type="text" placeholder="yyyy-mm-dd hh:mm" class="form-control" id="horaFinEditarPartido" [(ngModel)]="partido.horaFin" name="horaFin">
+      </div>
+      <div class="mb-3">
+        <label for="puntajePais1" class="form-label">Puntaje País 1</label>
+        <input type="number" class="form-control" id="puntajePais1EditarPartido" [(ngModel)]="partido.puntajePais1" name="puntajePais1">
+      </div>
+      <div class="mb-3">
+        <label for="puntajePais2" class="form-label">Puntaje País 2</label>
+        <input type="number" class="form-control" id="puntajePais2EditarPartido" [(ngModel)]="partido.puntajePais2" name="puntajePais2">
+      </div>
+      <input type="hidden" [(ngModel)]="partido.idPartido" name="idPartido" id="idPartidoEditarPartido">
+    </form>
+  </div>
+  
+</div>
+<router-outlet></router-outlet>

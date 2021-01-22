@@ -1,0 +1,27 @@
+<div class="card espacio">
+  <div class="card-header text-center">
+    Eliminar Partido
+  </div>
+  <div class="card-footer text-muted ">
+    <button type="submit" class="btn btn-primary right" (click)='delete()' id="linkAceptarEliminarPartido">Aceptar</button>
+  </div>
+  <div class="card-body">
+    <form>
+      <div class="mb-3">
+        <label for="pais1" class="form-label">País 1</label>
+        <input type="text" class="form-control" id="pais1EliminarPartido" [(ngModel)]="partido.pais1" name="pais1" disabled>
+      </div>
+      <div class="mb-3">
+        <label for="pais2" class="form-label">País 2</label>
+        <input type="text" class="form-control" id="pais2EliminarPartido" [(ngModel)]="partido.pais2" name="pais2" disabled> 
+      </div>
+      <div class="mb-3">
+        <label for="horaInicio" class="form-label">Hora Inicio</label>
+        <input type="text" placeholder="yyyy-mm-dd hh:mm" class="form-control" id="horaInicioEliminarPartido" [(ngModel)]="partido.horaInicio" name="horaInicio" disabled>
+        <span class="validity"></span>
+      </div>
+      <input type="hidden" [(ngModel)]="partido.idPartido" name="idPartido" id="idPartidoEliminarPartido">
+    </form>
+  </div>
+</div>
+<router-outlet></router-outlet>

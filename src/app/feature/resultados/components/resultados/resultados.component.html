@@ -1,0 +1,35 @@
+<div class="container mx-auto my-3">
+  <h3 class="text-center">Resultados</h3>
+</div>
+<div class="card espacio">
+  <div class="card-body">
+    <table class="table table-hover">
+      <thead class="table-dark text-center">
+        <tr>
+          <th scope="col">Nombre</th>
+          <th scope="col">Cedula</th>
+          <th scope="col">Dinero Apostado</th>
+          <th scope="col">Puntaje Pais 1</th>
+          <th scope="col">Puntaje País 2</th>
+          <th scope="col">Dinero Ganado</th>
+          <th scope="col">Pais 1</th>
+          <th scope="col">Pais 2</th>
+          <th scope="col">Hora Inicio</th>
+        </tr>
+      </thead>
+      <tbody class="resultados">
+        <tr *ngFor="let item of listaApuestas | async" class="itemResultado">
+          <td>{{ item.nombre }}</td>
+          <td>{{ item.cedula }}</td>
+          <td>{{ item.dinero }}</td>
+          <td>{{ item.puntajePais1 }}</td>
+          <td>{{ item.puntajePais2 }}</td>
+          <td>{{ item.dineroGanado }}</td>
+          <td>{{ item.partido.pais1 }}</td>
+          <td>{{ item.partido.pais2 }}</td>
+          <td>{{ item.partido.horaInicio }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

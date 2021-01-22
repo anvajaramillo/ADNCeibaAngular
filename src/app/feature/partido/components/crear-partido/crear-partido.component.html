@@ -1,0 +1,25 @@
+<div class="card espacio">
+  <div class="card-header text-center">
+    Crear Partido
+  </div>
+  <div class="card-footer text-muted ">
+    <button type="submit" class="btn btn-primary right" (click)='crear()' id="linkAceptarCrearPartido">Aceptar</button>
+  </div>
+  <div class="card-body">
+    <form>
+      <div class="mb-3">
+        <label for="pais1" class="form-label">País 1</label>
+        <input type="text" class="form-control" id="pais1CrearPartido" [(ngModel)]="partido.pais1" name="pais1">
+      </div>
+      <div class="mb-3">
+        <label for="pais2" class="form-label">País 2</label>
+        <input type="text" class="form-control" id="pais2CrearPartido" [(ngModel)]="partido.pais2" name="pais2">
+      </div>
+      <div class="mb-3">
+        <label for="horaInicio" class="form-label">Hora Inicio</label>
+        <input type="text" placeholder="yyyy-mm-dd hh:mm" class="form-control" id="horaInicioCrearPartido" [(ngModel)]="partido.horaInicio" name="horaInicio">
+      </div>
+    </form>
+  </div>
+</div>
+<router-outlet></router-outlet>

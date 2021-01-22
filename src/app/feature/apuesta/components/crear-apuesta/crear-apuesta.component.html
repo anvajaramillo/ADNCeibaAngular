@@ -1,0 +1,45 @@
+<div class="card espacio">
+  <div class="card-header text-center">
+    Crear Apuesta
+  </div>
+  <div class="card-footer text-muted ">
+    <button type="submit" class="btn btn-primary right" (click)='crear()' id="linkAceptarCrearApuesta">Aceptar</button>
+  </div>
+  <div class="card-body">
+    <form>
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="nombreCrearApuesta" [(ngModel)]="apuesta.nombre" name="nombre">
+      </div>
+      <div class="mb-3">
+        <label for="cedula" class="form-label">Cédula</label>
+        <input type="text" class="form-control" id="cedulaCrearApuesta" [(ngModel)]="apuesta.cedula" name="cedula">
+      </div>
+      <div class="mb-3">
+        <label for="dinero" class="form-label">Dinero a apostar</label>
+        <input type="text" class="form-control" id="dineroCrearApuesta" [(ngModel)]="apuesta.dinero" name="dinero">
+      </div>
+      <div class="mb-3">
+        <label for="puntajePais1" class="form-label">Puntaje País 1</label>
+        <input type="number" class="form-control" id="puntajePais1CrearApuesta" [(ngModel)]="apuesta.puntajePais1" name="puntajePais1">
+      </div>
+      <div class="mb-3">
+        <label for="puntajePais2" class="form-label">Puntaje País 2</label>
+        <input type="number" class="form-control" id="puntajePais2CrearApuesta" [(ngModel)]="apuesta.puntajePais2" name="puntajePais2">
+      </div>
+      <div class="mb-3">
+        <label for="pais1" class="form-label">País 1</label>
+        <input type="text" class="form-control" id="pais1CrearApuesta" [(ngModel)]="apuesta.partido.pais1" name="pais1">
+      </div>
+      <div class="mb-3">
+        <label for="pais2" class="form-label">País 2</label>
+        <input type="text" class="form-control" id="pais2CrearApuesta" [(ngModel)]="apuesta.partido.pais2" name="pais2">
+      </div>
+      <div class="mb-3">
+        <label for="horaInicio" class="form-label">Hora Inicio</label>
+        <input type="text" placeholder="yyyy-mm-dd hh:mm" class="form-control" id="horaInicioCrearApuesta" [(ngModel)]="apuesta.partido.horaInicio" name="horaInicio">
+      </div>
+    </form>
+  </div>
+</div>
+<router-outlet></router-outlet>
