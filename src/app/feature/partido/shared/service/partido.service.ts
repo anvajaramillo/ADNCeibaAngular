@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpService } from '@core-service/http.service';
 import { environment } from 'src/environments/environment';
-import { Partido } from '../model/partido';
+import { Partido } from '../model/partido'; 
 
 @Injectable()
 export class PartidoService {
